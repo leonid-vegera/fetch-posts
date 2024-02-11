@@ -2,8 +2,14 @@ import React from 'react';
 import './Pagination.scss';
 import { PaginationItem } from '../PaginationItem/PaginationItem';
 
-export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-  const pageNumbers = [];
+type Props = {
+  postsPerPage: number,
+  totalPosts: number,
+  paginate: (num: number) => void,
+}
+
+export const Pagination: React.FC<Props> = ({ postsPerPage, totalPosts, paginate }) => {
+  const pageNumbers: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
@@ -14,6 +20,7 @@ export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <PaginationItem
         symbol="<"
         paginate={paginate}
+        number={0}
       />
       {pageNumbers.map((number) => (
         <PaginationItem
@@ -25,6 +32,7 @@ export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <PaginationItem
         symbol=">"
         paginate={paginate}
+        number={0}
         length={pageNumbers.length}
       />
     </ul>
