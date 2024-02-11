@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fetch-posts/static/css/main.935c35b0.css",
+    "main.js": "/fetch-posts/static/js/main.a8c15c38.js",
+    "index.html": "/fetch-posts/index.html",
+    "main.935c35b0.css.map": "/fetch-posts/static/css/main.935c35b0.css.map",
+    "main.a8c15c38.js.map": "/fetch-posts/static/js/main.a8c15c38.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.935c35b0.css",
+    "static/js/main.a8c15c38.js"
+  ]
+}
