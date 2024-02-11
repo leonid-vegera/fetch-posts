@@ -15,5 +15,6 @@
 ## Technologies used
 - React.js
 - Redux-toolkit / RTK-Query
+- TypeScript
 - SCSS
 - HTML
