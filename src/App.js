@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useGetPostsQuery } from './api/posts';
+import { DataList } from './components/DataList';
+import { Pagination } from './components/Pagination/Pagination';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentPage } from './redux/paginationSlice';
 
 function App() {
+  const { data, error, isLoading, refetch } = useGetPostsQuery();
+  const dispatch = useDispatch();
+  const { currentPage, postsPerPage } = useSelector((state) => state.pagination);
+
+  const handleButtonClick = () => {
+    refetch();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  const paginate = (pageNumber) => {
+    dispatch(setCurrentPage(pageNumber));
+  };
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data?.slice(indexOfFirstPost, indexOfLastPost);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="App__title">
+        Posts list from server
+      </h1>
+      <DataList items={currentPosts} isLoading={isLoading} isError={error}/>
+      <button className="App__button" onClick={handleButtonClick}>
+        Refresh list
+      </button>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={data?.length}
+        paginate={paginate}
+      />
     </div>
   );
 }

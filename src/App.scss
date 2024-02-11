@@ -1,0 +1,38 @@
+@import "styles/utils/_mixins";
+
+.App {
+  position: relative;
+  text-align: center;
+  min-width: 360px;
+
+  &__title {
+    color: #113456;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+
+  &__button {
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    padding: 15px 20px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    font-size: 18px;
+    min-width: fit-content;
+    color: #fff;
+    background-color: #1161a8;
+    cursor: pointer;
+    transition: opacity .5s ease;
+
+    &:hover {
+      @include button-hover;
+    }
+
+    &:active {
+      @include button-active;
+    }
+  }
+}

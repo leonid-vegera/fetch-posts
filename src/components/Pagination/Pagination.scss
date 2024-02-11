@@ -1,0 +1,10 @@
+.pagination {
+  position: sticky;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  list-style: none;
+}

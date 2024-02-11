@@ -1,0 +1,29 @@
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 40px;
+  margin: 50px auto;
+  min-width: 360px;
+  max-width: 600px;
+  border: 5px solid #c51b35;
+  background-color: rgba(197, 27, 53, 0.33);
+
+  &__icon {
+    color: red;
+
+    & svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 0.3px black;
+    text-stroke: 0.3px black;
+  }
+}

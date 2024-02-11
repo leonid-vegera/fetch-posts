@@ -1,0 +1,9 @@
+@mixin button-hover {
+  opacity: 0.9;
+  border-color: #173c5e;
+}
+
+@mixin button-active {
+  opacity: 0.8;
+  box-shadow: 0 0 5px #1161a8;
+}
