@@ -1,6 +1,6 @@
 # An implementation of the test task for ScroogeFrog Company
 
-## [DEMO Link of the Application](https://leonid-vegera.github.io/fetch-users/)
+## [DEMO Link of the Application](https://leonid-vegera.github.io/fetch-posts/)
 
 ## Description of the task
 
